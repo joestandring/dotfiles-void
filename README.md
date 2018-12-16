@@ -1,11 +1,11 @@
 # dotfiles
 Dotfiles and configs I use for my Void Linux setup.
 ## Stuff I use
-- Window manager: DWM (uselessgaps, alpha)
+- Window manager: dwm (uselessgaps, alpha)
 - Compositor: Compton
 - Editor: Vim
 - Terminal: st (alpha)
-- Theming: pywal
+- Theming: Pywal
 - Shell : Bash
 ## Todo
 - [ ] Fix alsa mute control with DWM in config.h (Possibly an issue with the statusbar displaying wrong).
