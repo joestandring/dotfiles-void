@@ -13,3 +13,5 @@ Dotfiles and configs I use for my Void Linux setup.
 - [ ] Get transparency on unfocused windows only (Worked in arch by default).
 - [ ] Implement inputting urls and maybe searching into dmenu
 - [x] Post to desktop threads even though I'm not happy with it at all.
+## Acknowledgements
+- Bar script stolen from @boylemic https://github.com/boylemic/configs/blob/master/dwm_status
