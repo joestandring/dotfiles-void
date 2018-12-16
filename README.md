@@ -6,6 +6,7 @@ Dotfiles and configs I use for my Void Linux setup.
 - Editor: Vim
 - Terminal: st (alpha)
 - Theming: pywal
+- Shell : Bash
 ## Todo
 - [ ] Fix alsa mute control with DWM in config.h (Possibly an issue with the statusbar displaying wrong).
 - [ ] Get pywal to theme DWM borders and bar.
