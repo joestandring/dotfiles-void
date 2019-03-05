@@ -1,17 +1,16 @@
 # dotfiles
-Dotfiles and configs I use for my Void Linux setup.
+Dotfiles and configs I use for my Arch Linux setup.
 ## Stuff I use
 - Window manager: dwm (uselessgaps, alpha)
 - Compositor: Compton
 - Editor: Vim
 - Terminal: st (alpha)
 - Theming: Pywal
-- Shell : Bash
+- Shell : Fish
 ## Todo
 - [ ] Fix alsa mute control with DWM in config.h (Possibly an issue with the statusbar displaying wrong).
-- [ ] Get pywal to theme DWM borders and bar.
-- [ ] Get transparency on unfocused windows only (Worked in arch by default).
+- [ ] Get transparency working with DWM.
 - [ ] Implement inputting urls and maybe searching into dmenu
-- [x] Post to desktop threads even though I'm not happy with it at all.
 ## Acknowledgements
 - Bar script stolen from @boylemic https://github.com/boylemic/configs/blob/master/dwm_status
+- Wallpapers stolen from all over the place. I DO NOT OWN THE RIGHTS TO ANY OF THEM!!
