@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack-Regular:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Hack-Regular.ttf:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -156,8 +156,6 @@ static unsigned int defaultattr = 11;
  */
 static MouseShortcut mshortcuts[] = {
 	/* button               mask            string */
-	{ Button4,              XK_ANY_MOD,     "\031" },
-	{ Button5,              XK_ANY_MOD,     "\005" },
 };
 
 /* Internal keyboard shortcuts. */
