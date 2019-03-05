@@ -1,6 +1,7 @@
+# I'm gonna update this when I get the time. This is currently quite out of date.
 # dotfiles
 Dotfiles and configs I use for my Arch Linux setup.
-## Stuff I use
+## Stuff I Use
 - Window manager: dwm (uselessgaps, alpha)
 - Compositor: Compton
 - Editor: Vim
