@@ -13,5 +13,5 @@ Dotfiles and configs I use for my Arch Linux setup.
 - [ ] Get transparency working with DWM.
 - [ ] Implement inputting urls and maybe searching into dmenu
 ## Acknowledgements
-- Bar script stolen from @boylemic https://github.com/boylemic/configs/blob/master/dwm_status
+- Bar script stolen (and modified) from @boylemic https://github.com/boylemic/configs/blob/master/dwm_status
 - Wallpapers stolen from all over the place. I DO NOT OWN THE RIGHTS TO ANY OF THEM!!
