@@ -56,7 +56,7 @@ print_wifi() {
 		connectedto=$(iw wlp2s0 link | grep Connected | awk '{print $3}' | cut -c 10-)
 	fi
 
-	echo -e "[$wifi $ip]"
+	echo -e "[NET $wifi $ip]"
 }
 
 print_mem(){
@@ -83,7 +83,7 @@ print_bat(){
 }
 
 print_date(){
-	echo [$(date "+%a %d-%m-%y %T")]
+	echo [DAT $(date "+%a %d-%m-%y %T")]
 }
 
 while true
