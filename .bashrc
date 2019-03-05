@@ -6,10 +6,11 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# Import colourschemes from 'wal' asynchronously
+# Import colourshcemes from 'wal' asynchronosly
 (cat ~/.cache/wal/sequences &)
 
 # TTY colourscheme
 source ~/.cache/wal/colors-tty.sh
 
-neofetch
+# Drop into fish
+exec fish

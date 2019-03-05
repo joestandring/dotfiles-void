@@ -1,16 +1,15 @@
-# Wifi app
-nm-applet &
-
-# Set keyboard to UK
+# GB Keyboard
 setxkbmap gb &
 
-# Statusbar
+# DWM Statusbar
 ~/scripts/dwm_status &
 
-# Change wallpaper
-wal -i /home/joe/pictures/wallpapers &
+# Pywal
+wal -i /home/joe/Pictures/wallpapers &
 
-# Start dwm and Compton
-compton &
+# Start Compton
+# compton &
+
+# Start DWM
 exec dwm
 
