@@ -1,15 +1,16 @@
-# GB Keyboard
+# Change wallpaper
+wal -i /home/joe/wallpapers
+
+# Set keyboard to UK
 setxkbmap gb &
 
-# DWM Statusbar
-~/scripts/dwm_status &
+# Statusbar
+/bin/dwm_status &
 
-# Pywal
-wal -i /home/joe/Pictures/wallpapers &
+# Dunst
+/home/joe/.config/dunst/wal.sh &
 
-# Start Compton
-# compton &
-
-# Start DWM
+# Start dwm
+# compton --backend xrender &
 exec dwm
 
