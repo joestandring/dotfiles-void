@@ -1,17 +1,14 @@
-# I'm gonna update this when I get the time. This is currently quite out of date.
-# dotfiles
+# The Most Beautiful Waste of Time
 Dotfiles and configs I use for my Arch Linux setup.
 ## Stuff I Use
-- Window manager: dwm (uselessgaps, alpha)
-- Compositor: Compton
+- Window manager: dwm (uselessgap, alpha)
+- Compositor: Compton (when I can get it to work again)
 - Editor: Vim
 - Terminal: st (alpha)
 - Theming: Pywal
-- Shell : Fish
+- Shell: Fish
+- Notifications: Dunst
 ## Todo
-- [ ] Fix alsa mute control with DWM in config.h (Possibly an issue with the statusbar displaying wrong).
-- [ ] Get transparency working with DWM.
-- [ ] Implement inputting urls and maybe searching into dmenu
+- [ ] Get compton to play nice with DWM again
 ## Acknowledgements
-- Bar script stolen (and modified) from @boylemic https://github.com/boylemic/configs/blob/master/dwm_status
-- Wallpapers stolen from all over the place. I DO NOT OWN THE RIGHTS TO ANY OF THEM!!
+- Bar script from @boylemic https://github.com/boylemic/configs/blob/master/dwm_status
