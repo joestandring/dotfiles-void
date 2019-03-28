@@ -1,5 +1,6 @@
 # The Most Beautiful Waste of Time
 Dotfiles and configs I use for my Arch Linux setup.
+![Screenshot](https://imgur.com/e54W5uL)
 ## Stuff I Use
 - Window manager: dwm (uselessgap)
 - Compositor: Compton (when I can get it to work again)
