@@ -2,7 +2,7 @@
 Dotfiles and configs I use for my Arch Linux setup.
 ![Screenshot](/screen.png)
 ## Stuff I Use
-- Window manager: dwm (uselessgap, systray)
+- Window manager: dwm (systray)
 - Compositor: Compton
 - Editor: Vim
 - Terminal: st (alpha)
