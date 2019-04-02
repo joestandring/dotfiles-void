@@ -1,6 +1,6 @@
 # A Beautiful Waste of Time
 Dotfiles and configs I use for my Arch Linux setup.
-![Screenshot](/screen.png)
+![Screenshot](/sshot.png)
 ## Stuff I Use
 - Window manager: [dwm](https://dwm.suckless.org/) ([systray](https://dwm.suckless.org/patches/systray/))
 - Compositor: [Compton](https://github.com/chjj/compton)
