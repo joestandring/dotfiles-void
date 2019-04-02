@@ -4,8 +4,9 @@ Dotfiles and configs I use for my Arch Linux setup.
 ## Stuff I Use
 - Window manager: [dwm](https://dwm.suckless.org/) ([systray](https://dwm.suckless.org/patches/systray/))
 - Terminal: [st](https://st.suckless.org/) ([alpha](https://st.suckless.org/patches/alpha/))
+- Font: [Hack](https://github.com/source-foundry/Hack)
 - Compositor: [Compton](https://github.com/chjj/compton)
-- Editor: [Vim](https://github.com/vim/vim)
+- Editor: [Vim](https://github.com/vim/vim) using [Vundle](https://github.com/VundleVim/Vundle.vim)
 - Colourscheme: [Pywal](https://github.com/dylanaraps/pywal)
 - Shell: [Fish](https://github.com/fish-shell/fish-shell)
 - Notifications: [Dunst](https://github.com/dunst-project/dunst)
