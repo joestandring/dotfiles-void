@@ -37,6 +37,7 @@ old_received_bytes=$received_bytes
 old_transmitted_bytes=$transmitted_bytes
 old_time=$now
 
+# Prints alsa volume
 print_volume() {
 	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
 	if test "$volume" -gt 0
@@ -47,6 +48,7 @@ print_volume() {
 	fi
 }
 
+# Prints connected wifi network
 print_wifi() {
 	ip=$(ip route get 8.8.8.8 2>/dev/null|grep -Eo 'src [0-9.]+'|grep -Eo '[0-9.]+')
 
@@ -59,31 +61,57 @@ print_wifi() {
 	echo -e "[NET $wifi $ip]"
 }
 
+# Prints memory usage
 print_mem(){
 	memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
 	echo -e "$memfree"
 }
 
+# Prints system temperature
 print_temp(){
 	test -f /sys/class/thermal/thermal_zone0/temp || return 0
 	echo $(head -c 2 /sys/class/thermal/thermal_zone0/temp)C
 }
 
-print_bat(){
-	hash acpi || return 0
-	onl="$(grep "on-line" <(acpi -V))"
-	charge="$(cat /sys/class/power_supply/BAT1/capacity)"
-	if [[ ( -z $onl && ${charge} -gt 20 ) ]]; then
-		echo -e "[BAT ${charge}]"
-	elif [[ ( -z $onl && ${charge} -le 20 ) ]]; then
-		echo -e "[BAT ${charge}]"
-	else
-		echo -e "[BAT ${charge}]"
-	fi
+#print_bat(){
+#	hash acpi || return 0
+#	onl="$(grep "on-line" <(acpi -V))"
+#	charge="$(cat /sys/class/power_supply/BAT1/capacity)"
+#	if [[ ( -z $onl && ${charge} -gt 20 ) ]]; then
+#		echo -e "[BAT ${charge}]"
+#	elif [[ ( -z $onl && ${charge} -le 20 ) ]]; then
+#		echo -e "[BAT ${charge}]"
+#	else
+#		echo -e "[BAT ${charge}]"
+#	fi
+#}
+
+# Prints the date and time
+print_date(){
+	echo [$(date "+%a %d-%m-%y %T")]
 }
 
-print_date(){
-	echo [DAT $(date "+%a %d-%m-%y %T")]
+# Prints CMUS artitst, title, and position/duration to bar
+print_music(){
+    if ps -C cmus > /dev/null; then
+        artist=`cmus-remote -Q | 
+	        grep --text '^tag artist' | 
+	        sed '/^tag artistsort/d' | 
+	        awk '{gsub("tag artist ", "");print}'`
+        title=`cmus-remote -Q  | 
+	        grep --text '^tag title' | 
+	        sed -e 's/tag title //' |
+	        awk '{gsub("tag title ", "");print}'`
+        position=`cmus-remote -Q |
+            grep --text '^position' |
+            sed -e 's/position //' |
+            awk '{gsub("position ", "");print}'`
+        duration=`cmus-remote -Q |
+            grep --text '^duration' |
+            sed -e 's/duration //' |
+            awk '{gsub("duration ", "");print}'`
+        echo "[$artist - $title $position/$duration]"; else echo "";
+    fi
 }
 
 while true
@@ -96,7 +124,7 @@ do
 	vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
 	vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
-	xsetroot -name "$(print_wifi) $(print_volume) $(print_bat) $(print_date)"
+    xsetroot -name "$(print_music) $(print_volume) $(print_date)"
 
 	# Update old values to perform new calculations
 	old_received_bytes=$received_bytes
