@@ -2,7 +2,7 @@
 Dotfiles and configs I use for my Arch Linux setup.
 ![Screenshot](/screen.png)
 ## Stuff I Use
-- Window manager: [dwm](https://dwm.suckless.org/)([systray](https://dwm.suckless.org/patches/systray/))
+- Window manager: [dwm](https://dwm.suckless.org/) ([systray](https://dwm.suckless.org/patches/systray/))
 - Compositor: [Compton](https://github.com/chjj/compton)
 - Editor: [Vim](https://github.com/vim/vim)
 - Terminal: [st](https://st.suckless.org/) ([alpha](https://st.suckless.org/patches/alpha/))
