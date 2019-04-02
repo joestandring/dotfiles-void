@@ -10,6 +10,9 @@ setxkbmap gb &
 # Change wallpaper
 wal -i /mnt/storage/Pictures/Wallpapers
 
+# Dunst
+/home/joe/.config/dunst/wal.sh &
+
 # Build dwm
 cd /home/joe/dwm
 sudo make clean install
