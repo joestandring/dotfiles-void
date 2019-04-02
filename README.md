@@ -18,4 +18,4 @@ Dotfiles and configs I use for my Arch Linux setup.
 - Fix progress displaying in seconds for dwm_status
 ## Acknowledgements
 - Bar script modified from [@boylemic](https://github.com/boylemic/configs/blob/master/dwm_status)
-- dunstrc template modified from [@GloverDonovan] (https://github.com/GloverDonovan/dotfiles/blob/eff7623a9a2e9c7ccedb2c95a1730ac4d523ed9c/wal/.config/wal/templates/dunstrc)
+- dunstrc template modified from [@GloverDonovan](https://github.com/GloverDonovan/dotfiles/blob/eff7623a9a2e9c7ccedb2c95a1730ac4d523ed9c/wal/.config/wal/templates/dunstrc)
