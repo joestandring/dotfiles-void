@@ -29,7 +29,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
-
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -59,7 +58,7 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" Linebreak on 500 characters
+" Line break on 500 characters
 set lbr
 set tw=500
 
@@ -75,4 +74,9 @@ set wildmode=list:longest,full
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+
+" Key binds
+" Spell-check
+map<F6> :setlocal spell! spelllang=en_gb<CR>
 
