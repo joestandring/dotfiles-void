@@ -9,6 +9,7 @@ Dotfiles and configs I use for my Arch Linux setup.
 - Editor: [Vim](https://github.com/vim/vim) using [Vundle](https://github.com/VundleVim/Vundle.vim)
 - Colourscheme: [Pywal](https://github.com/dylanaraps/pywal)
 - Shell: [Fish](https://github.com/fish-shell/fish-shell)
+- File explorer: [nnn](https://github.com/jarun/nnn)
 - Notifications: [Dunst](https://github.com/dunst-project/dunst)
 - Music player: [Cmus](https://github.com/cmus/cmus)
 - Video player: [mpv](https://github.com/mpv-player/mpv)
