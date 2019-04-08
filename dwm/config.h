@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -23,6 +23,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+    { "nnn",      NULL,       NULL,       0,            0,           -2 },
 };
 
 /* layout(s) */
@@ -52,6 +53,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]         = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", sel_fg, "-sb", sel_bg, "-sf", norm_bg, NULL };
 static const char *termcmd[]          = { "st", NULL };
+static const char *nnncmd[]           = { "st", "nnn", "-d", NULL };
 static const char *upvol[]            = { "amixer", "set", "Master", "1+",     NULL };
 static const char *downvol[]          = { "amixer", "set", "Master", "1-",     NULL };
 static const char *mutevol[]          = { "amixer", "set", "Master", "toggle", NULL };
@@ -60,11 +62,12 @@ static const char *print_screen_cmd[] = { "scrot", "%Y-%m-%d_%H:%M:%S.png", "-e"
 static Key keys[] = {
 	/* modifier                     key        		function        argument */
 	{ 0, 				XK_Print,	 	spawn, 		{.v = print_screen_cmd } },
-	{ 0,                            XK_F12,      		spawn,          {.v = upvol } },
-	{ 0,                            XK_F11,      		spawn,          {.v = downvol } },
-	{ 0,                            XK_F10,      		spawn,          {.v = mutevol } },
+	{ 0,                            XK_F12,      	spawn,          {.v = upvol } },
+	{ 0,                            XK_F11,      	spawn,          {.v = downvol } },
+	{ 0,                            XK_F10,      	spawn,          {.v = mutevol } },
 	{ MODKEY,                       XK_p,      		spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, 		spawn,          {.v = termcmd } },
+    { MODKEY,                       XK_n,           spawn,          {.v = nnncmd } },
 	{ MODKEY,                       XK_b,      		togglebar,      {0} },
 	{ MODKEY,                       XK_j,     	 	focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      		focusstack,     {.i = -1 } },
