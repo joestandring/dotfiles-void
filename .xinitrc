@@ -2,16 +2,19 @@
 setxkbmap gb &
 
 # Statusbar
-/bin/dwm_status &
+/home/joe/scripts/dwm_status &
 
-# Dunst
-/home/joe/.config/dunst/wal.sh &
+# nm-applet
+nm-applet &
 
 # Change wallpaper
 wal -i /mnt/storage/Pictures/Wallpapers
 
 # Dunst
 /home/joe/.config/dunst/wal.sh &
+
+# Get mail
+offlineimap &
 
 # Build dwm
 cd /home/joe/dwm
