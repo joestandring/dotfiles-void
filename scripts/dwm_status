@@ -114,6 +114,12 @@ print_music(){
     fi
 }
 
+# Prints number of emails in mutt inbox
+print_mail(){
+    mailcount=$(ls /home/joe/.mail/college/INBOX/new | wc -l)
+    echo "[MAIL $mailcount]"
+}
+
 while true
 do
 
@@ -124,7 +130,7 @@ do
 	vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
 	vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
-    xsetroot -name "$(print_music) $(print_volume) $(print_date)"
+    xsetroot -name "$(print_music) $(print_mail) $(print_volume) $(print_date)"
 
 	# Update old values to perform new calculations
 	old_received_bytes=$received_bytes
