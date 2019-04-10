@@ -13,6 +13,18 @@ Plugin 'VundleVim/Vundle.vim'
 " LaTeX support
 Plugin 'lervag/vimtex'
 
+" Autocompletion
+Plugin 'Valloric/YouCompleteMe'
+
+" Syntax checking
+Plugin 'scrooloose/syntastic'
+
+" PEP 8 checker
+Plugin 'nvie/vim-flake8'
+
+" Search files in Vim
+Plugin 'kien/ctrlp.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -33,6 +45,19 @@ filetype plugin indent on    " required
 filetype plugin on
 filetype indent on
 
+" Use UTF-8
+set encoding=utf-8
+
+" Support virtualenv
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
 " Set autoread when a file is changed from the outside
 set autoread
 
@@ -48,32 +73,39 @@ set showmatch
 " Enable syntax highlighting
 syntax enable
 
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
+" Default indentation and wrapping
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set fileformat=unix
 
-" Line break on 500 characters
-set lbr
-set tw=500
+" Indentation and wrapping for CSS/HTML/JS
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
-
-" Relative Numbers
+" Relative numbers
 set number relativenumber
-
-" Autocompletion
-set wildmode=list:longest,full
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" 'o' and 'O' do not enter insert mode
+nnoremap o o<Esc>
+nnoremap O O<Esc>
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 " Key binds
