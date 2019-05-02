@@ -1,19 +1,20 @@
 # Set keyboard to UK
 setxkbmap gb &
 
-# Scripts
-/home/joe/scripts/dwm_status &
-/home/joe/scripts/bat_notif &
+# Statusbar
+/home/joe/scripts/dwm_status.sh &
 
-# Applets
+# nm-applet
 nm-applet &
-blueman-applt &
 
 # Change wallpaper
-wal -i /home/joe/pictures/wallpapers/
+wal -i /mnt/storage/Pictures/Wallpapers
 
 # Dunst
 /home/joe/.config/dunst/wal.sh &
+
+# Get mail
+mbsync uni &
 
 # Build dwm
 cd /home/joe/.config/dwm
@@ -21,6 +22,6 @@ sudo make clean install
 cd /home/joe
 
 # Start dwm
-# compton --config ~/.config/compton/compton.conf -b
+compton --config ~/.config/compton/compton.conf -b
 exec dwm
 

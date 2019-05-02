@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Screenshot: http://s.natalian.org/2013-08-17/dwm_status.png
 # Network speed stuff stolen from http://linuxclues.blogspot.sg/2009/11/shell-script-show-network-speed.html
 
@@ -91,6 +91,20 @@ print_date(){
 	echo [$(date "+%a %d-%m-%y %T")]
 }
 
+sec_to_ms () {
+    N=$1
+    M=0
+    if (($N>59)); then
+        ((S=$N%60))
+        ((N=$N/60))
+        ((M=$N))
+    else
+        ((S=$N))
+    fi
+    printf "$M:"
+    printf "%02d" "$S"
+}
+
 # Prints CMUS artitst, title, and position/duration to bar
 print_music(){
     if ps -C cmus > /dev/null; then
@@ -110,14 +124,28 @@ print_music(){
             grep --text '^duration' |
             sed -e 's/duration //' |
             awk '{gsub("duration ", "");print}'`
+        position=$(sec_to_ms "$position")
+        duration=$(sec_to_ms "$duration")
         echo "[$artist - $title $position/$duration]"; else echo "";
     fi
 }
 
 # Prints number of emails in mutt inbox
 print_mail(){
-    mailcount=$(ls /home/joe/.mail/college/INBOX/new | wc -l)
+    mailcount=$(ls /home/joe/.local/share/mail/uni/INBOX/new | wc -l)
     echo "[MAIL $mailcount]"
+}
+
+print_countdown() {
+    if [ -e /tmp/countdown.* ]; then
+        echo "["$(tail -1 /tmp/countdown.*)"]"
+    fi
+}
+
+print_weather() {
+    printf "["
+    curl -s wttr.in/peterborough?format=1 
+    printf "]\n"
 }
 
 while true
@@ -130,7 +158,7 @@ do
 	vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
 	vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
-    xsetroot -name "$(print_music) $(print_mail) $(print_volume) $(print_date)"
+    xsetroot -name "$(print_weather)$(print_countdown)$(print_music)$(print_mail)$(print_volume)$(print_date)"
 
 	# Update old values to perform new calculations
 	old_received_bytes=$received_bytes
