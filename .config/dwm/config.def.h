@@ -10,9 +10,9 @@ static const int systraypinningfailfirst = 1;        /* 1: if pinning fails, dis
 static const int showsystray             = 1;        /* 0 means no systray */
 static const int showbar                 = 1;        /* 0 means no bar */
 static const int topbar                  = 1;        /* 0 means bottom bar */
-static const char *fonts[]               = { "Hack-Regular:size=14" };
-static const char dmenufont[]            = "Hack-Regular:size=14";
-#include "/home/joe/.cache/wal/colors-wal-dwm-fix.h"
+static const char *fonts[]               = { "Hack-Regular:size=12" };
+static const char dmenufont[]            = "Hack-Regular:size=12";
+#include "/home/joe/.cache/wal/colors-wal-dwm.h"
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -55,9 +55,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]         = { "dmenu_run", "-m", dmenumon, NULL };
 static const char *termcmd[]          = { "st", NULL };
 static const char *nnncmd[]           = { "st", "nnn", "-d", NULL };
-static const char *upvol[]            = { "amixer", "set", "Master", "1+",     NULL };
-static const char *downvol[]          = { "amixer", "set", "Master", "1-",     NULL };
-static const char *mutevol[]          = { "amixer", "set", "Master", "toggle", NULL };
+static const char *upvol[]            = { "pamixer", "-i", "1", NULL };
+static const char *downvol[]          = { "pamixer", "-d", "1", NULL };
+static const char *mutevol[]          = { "pamixer", "-m", NULL };
+static const char *unmutevol[]        = { "pamixer", "-u", NULL };
 static const char *print_screen_cmd[] = { "scrot", "%Y-%m-%d_%H:%M:%S.png", "-e", "mv $f ~/pictures/screenshots", NULL };
 
 static Key keys[] = {
@@ -66,6 +67,7 @@ static Key keys[] = {
 	{ 0,                            XK_F12,      	spawn,          {.v = upvol } },
 	{ 0,                            XK_F11,      	spawn,          {.v = downvol } },
 	{ 0,                            XK_F10,      	spawn,          {.v = mutevol } },
+	{ 0,                            XK_F9,      	spawn,          {.v = unmutevol } },
 	{ MODKEY,                       XK_p,      		spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, 		spawn,          {.v = termcmd } },
     { MODKEY,                       XK_n,           spawn,          {.v = nnncmd } },
