@@ -2,19 +2,24 @@
 setxkbmap gb &
 
 # Statusbar
-/home/joe/scripts/dwm_status.sh &
+dwm-bar &
 
 # nm-applet
 nm-applet &
 
 # Change wallpaper
-wal -i /mnt/storage/Pictures/Wallpapers
+wal -i /home/joe/pictures/wallpapers
 
 # Dunst
 /home/joe/.config/dunst/wal.sh &
 
-# Get mail
-mbsync uni &
+# Build st
+cd /home/joe/.config/st
+sudo make clean install
+
+# Build dmenu
+cd /home/joe/.config/dmenu
+sudo make clean install
 
 # Build dwm
 cd /home/joe/.config/dwm
