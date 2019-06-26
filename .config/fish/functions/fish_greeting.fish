@@ -1,7 +1,6 @@
 function fish_greeting
-	fortune -e
+	neofetch
     echo ""
     cat ~/.calcurse/apts
-    echo ""
     cat ~/.calcurse/todo
 end
