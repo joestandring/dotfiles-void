@@ -11,20 +11,20 @@ nm-applet &
 wal -i /usr/share/void-artwork/void-logo.png
 
 # Dunst
-/home/joe/.config/dunst/wal.sh &
+/home/$USER/.config/dunst/wal.sh &
 
 # Build st
-cd /home/joe/.config/st
+cd /home/$USER/.config/st
 sudo make clean install
 
 # Build dmenu
-cd /home/joe/.config/dmenu
+cd /home/$USER/.config/dmenu
 sudo make clean install
 
 # Build dwm
-cd /home/joe/.config/dwm
+cd /home/$USER/.config/dwm
 sudo make clean install
-cd /home/joe
+cd /home/$USER
 
 # Start dwm
 compton --config ~/.config/compton/compton.conf -b
