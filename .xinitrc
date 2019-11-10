@@ -8,7 +8,7 @@ dwm-bar &
 nm-applet &
 
 # Change wallpaper
-wal -i /home/joe/pictures/wallpapers
+wal -i /usr/share/void-artwork/void-logo.png
 
 # Dunst
 /home/joe/.config/dunst/wal.sh &
