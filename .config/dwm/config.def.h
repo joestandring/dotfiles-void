@@ -59,20 +59,19 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]         = { "dmenu_run", "-m", dmenumon, NULL };
 static const char *termcmd[]          = { "st", NULL };
-static const char *nnncmd[]           = { "st", "nnn -d", NULL };
 static const char *upvol[]            = { "pamixer", "-i", "1", NULL };
 static const char *downvol[]          = { "pamixer", "-d", "1", NULL };
 static const char *mutevol[]          = { "pamixer", "-m", NULL };
 static const char *unmutevol[]        = { "pamixer", "-u", NULL };
-static const char *brightdown[]	      = { "xbacklight -dec 10", NULL };
-static const char *brightup[]	      = { "xbacklight -inc 10", NULL };
+//static const char *brightdown[]	      = { "xbacklight -dec 10", NULL };
+//static const char *brightup[]	      = { "xbacklight -inc 10", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        		function        argument */
-	{ 0,                            XF86AudioRaiseVolume,      	spawn,          {.v = upvol } },
-	{ 0,                            XF86AudioLowerVolume,      	spawn,          {.v = downvol } },
-	{ 0,                            XF86AudioMute,      	spawn,          {.v = mutevol } },
-	{ ShiftMask,                    XF86AudioMute,      	spawn,          {.v = unmutevol } },
+	{ 0,                            XK_12,      	spawn,          {.v = upvol } },
+	{ 0,                            XK_11,      	spawn,          {.v = downvol } },
+	{ 0,                            XK_10,      	spawn,          {.v = mutevol } },
+	{ ShiftMask,                    XK_10,      	spawn,          {.v = unmutevol } },
 	{ 0,				XF86MonBrightnessDown   spawn,		{.v = brightdown } },
 	{ 0,				XF86MonBrightnessUp     spawn,		{.v = brightup } },
 	{ MODKEY,                       XK_p,      		spawn,          {.v = dmenucmd } },
