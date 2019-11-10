@@ -11,7 +11,7 @@ Dotfiles and configs I use for my Void Linux setup.
 - Editor: [NeoVim](https://neovim.io) using [vim-plug](https://github.com/junegunn/vim-plug)
 - Colourscheme: [Pywal](https://github.com/dylanaraps/pywal)
 - Shell: [Fish](https://github.com/fish-shell/fish-shell)
-- File explorer: [nnn](https://github.com/jarun/nnn)
+- File explorer: [ranger](https://github.com/ranger/ranger)
 - Notifications: [Dunst](https://github.com/dunst-project/dunst)
 - Music player: [cmus](https://github.com/cmus/cmus)
 - Video player: [mpv](https://github.com/mpv-player/mpv)
