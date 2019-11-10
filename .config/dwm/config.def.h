@@ -24,7 +24,6 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-    { "nnn",      NULL,       NULL,       0,            0,           -2 },
 };
 
 /* layout(s) */
@@ -44,8 +43,8 @@ static const Layout layouts[] = {
 #define XF86AudioMute	      0x1008ff12
 #define XF86AudioLowerVolume  0x1008ff11
 #define XF86AudioRaiseVolume  0x1008ff13
-#define XF86MonBrightnessDown 0x1008ff03
-#define XF86MonBrightnessUp   0x1008ff02
+//#define XF86MonBrightnessDown 0x1008ff03
+//#define XF86MonBrightnessUp   0x1008ff02
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -68,15 +67,14 @@ static const char *unmutevol[]        = { "pamixer", "-u", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        		function        argument */
-	{ 0,                            XK_12,      	spawn,          {.v = upvol } },
-	{ 0,                            XK_11,      	spawn,          {.v = downvol } },
-	{ 0,                            XK_10,      	spawn,          {.v = mutevol } },
-	{ ShiftMask,                    XK_10,      	spawn,          {.v = unmutevol } },
-	{ 0,				XF86MonBrightnessDown   spawn,		{.v = brightdown } },
-	{ 0,				XF86MonBrightnessUp     spawn,		{.v = brightup } },
+	{ 0,                            XK_F12,      	spawn,          {.v = upvol } },
+	{ 0,                            XK_F11,      	spawn,          {.v = downvol } },
+	{ 0,                            XK_F10,      	spawn,          {.v = mutevol } },
+	{ ShiftMask,                    XK_F10,      	spawn,          {.v = unmutevol } },
+//	{ 0,				XF86MonBrightnessDown   spawn,		{.v = brightdown } },
+//	{ 0,				XF86MonBrightnessUp     spawn,		{.v = brightup } },
 	{ MODKEY,                       XK_p,      		spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, 		spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_n,           spawn,          {.v = nnncmd } },
 	{ MODKEY,                       XK_b,      		togglebar,      {0} },
 	{ MODKEY,                       XK_j,     	 	focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      		focusstack,     {.i = -1 } },
