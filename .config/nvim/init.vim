@@ -52,3 +52,6 @@ au BufNewFile,BufRead *.js, *.html, *.css
 
 " Automatically import in Go
 let g:go_fmt_command = "goimports"
+
+" 80 line marker
+:set colorcolumn=80
