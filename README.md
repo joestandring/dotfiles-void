@@ -1,3 +1,5 @@
+# This repository is no longer maintained!
+I have moved to Arch Linux and changed a lot of my configs by doing so. My current Arch linux dotfiles are now available [here](https//github.com/joestandring/dotfiles). This repo will be kept up for those who may still wish to use it.
 # A Beautiful Waste of Time
 Dotfiles and configs I use for my Void Linux setup.
 ![Screenshot](/sshot.png)
